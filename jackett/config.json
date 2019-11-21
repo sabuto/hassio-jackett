@@ -7,7 +7,7 @@
   "arch": ["aarch64", "amd64"],
   "startup": "before",
   "boot": "auto",
-  "webui": "http://[HOST]:[PORT:80]",
+  "webui": "http://[HOST]:[PORT:9118]",
   "map": [
     "config:rw",
     "share:rw",
@@ -22,7 +22,7 @@
   "options": {},
   "schema": {},
   "ports" : {
-    "8989/tcp": null
+    "9118/tcp": 9118,
   },
   "ports_description" : {
     "8989/tcp": "Port for the web interface (not needed with ingress)"
