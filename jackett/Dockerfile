@@ -27,12 +27,12 @@ RUN apk add --no-cache --virtual .build-dependencies \
     && curl -o \
     /tmp/jackett.tar.gz -L \
     		"https://github.com/Jackett/Jackett/releases/download/${JACKETT_RELEASE}/Jackett.Binaries.Linux${JACKETT_ARCH}.tar.gz" \
-    && tar xf \
-    /tmp/jackett.tar.gz -C \
-    		/opt/Jackett --strip-components=1 \
-    && apk del --purge .build-dependencies \
-    && rm -rf /tmp/* \
-    		  /var/tmp/*
+    #&& tar xf \
+    #/tmp/jackett.tar.gz -C \
+    #		/opt/Jackett --strip-components=1 \
+    #&& apk del --purge .build-dependencies \
+    #&& rm -rf /tmp/* \
+    #		  /var/tmp/*
 
  COPY rootfs /
  RUN chmod a+x /run.sh
