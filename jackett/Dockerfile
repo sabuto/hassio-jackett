@@ -32,7 +32,6 @@ RUN apk add --no-cache --virtual .build-dependencies \
     		/opt/Jackett --strip-components=1 \
     && apk del --purge .build-dependencies \
     && rm -rf /tmp/* \
-    		  /var/tmp/* \
              /etc/nginx
 
  COPY rootfs /
