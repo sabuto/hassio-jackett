@@ -1,0 +1,22 @@
+language: shell
+
+services:
+  - docker
+
+branches:
+  only:
+  - dev
+
+before_install:
+  - chmod +x build.sh
+  - chmod +x dist.sh
+
+
+jobs:
+  include:
+    - stage: Build Docker Images
+      script:
+        - $TRAVIS_BUILD_DIR/build.sh
+    - stage: Deploy Docker Images to Docker Hub
+      script:
+        - $TRAVIS_BUILD_DIR/dist.sh
