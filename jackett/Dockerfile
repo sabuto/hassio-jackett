@@ -3,21 +3,20 @@ FROM $BUILD_FROM
 
 ARG BUILD_ARCH=amd64
 
-ARG JACKETT_RELEASE=v0.12.999
+ARG JACKETT_RELEASE
 
 ENV XDG_DATA_HOME="/config" \
 XDG_CONFIG_HOME="/config"
 
-RUN apk add --no-cache --virtual .build-dependencies \
-        icu-libs \
-        libssl1.1 \
-        wget \
-        tar \
-    \
-    && apk add --no-cache \
-        lua-resty-http=0.13-r0 \
-        nginx-mod-http-lua=1.16.1-r1 \
-        nginx=1.16.1-r1 \
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+              libicu60 \
+              libssl1.0 \
+              wget \
+              curl \
+              nginx \
+              libnginx-mod-http-lua \
+              luarocks \
     \
     && mkdir -p /opt/Jackett \
     && if [ -z ${JACKETT_RELEASE} ]; then \
@@ -33,9 +32,11 @@ RUN apk add --no-cache --virtual .build-dependencies \
     && tar xf \
     /tmp/jackett.tar.gz -C \
     		/opt/Jackett --strip-components=1 \
-    && apk del --purge .build-dependencies \
+    && apt-get clean \
     && rm -rf /tmp/* \
-             /etc/nginx
+              /var/lib/apt/lists/* \
+              /var/tmp/* \
+              /etc/nginx
 
  COPY rootfs /
  RUN chmod a+x /run.sh

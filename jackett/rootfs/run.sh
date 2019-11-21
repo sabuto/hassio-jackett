@@ -20,7 +20,8 @@ exec nginx &
 WAIT_PIDS+=($!)
 
 bashio::log.info "starting jackett"
-exec /opt/Jackett/jackett --NoUpdates
+exec /opt/Jackett/jackett --NoUpdates &
+WAIT_PIDS+=($!)
 
 function stop_addon() {
 	bashio::log.info "Kill Processes..."
