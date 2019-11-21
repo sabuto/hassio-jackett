@@ -9,6 +9,7 @@ RUN apk add --no-cache --virtual .build-dependencies \
         icu-libs \
         libssl1.1 \
         wget \
+        tar \
     \
     && apk add --no-cache \
         lua-resty-http=0.13-r0 \
