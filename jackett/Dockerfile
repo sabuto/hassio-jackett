@@ -33,6 +33,7 @@ RUN apk add --no-cache --virtual .build-dependencies \
     #&& apk del --purge .build-dependencies \
     #&& rm -rf /tmp/* \
     #		  /var/tmp/*
+    && rm -rf /etc/nginx
 
  COPY rootfs /
  RUN chmod a+x /run.sh
