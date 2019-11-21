@@ -18,6 +18,7 @@ RUN apt-get update \
               libnginx-mod-http-lua \
               luarocks \
     \
+    && luarocks install lua-resty-http 0.13-0 \
     && mkdir -p /opt/Jackett \
     && if [ -z ${JACKETT_RELEASE} ]; then \
               JACKETT_RELEASE=$(curl -sX GET "https://api.github.com/repos/Jackett/Jackett/releases/latest" \
