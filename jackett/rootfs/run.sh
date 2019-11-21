@@ -19,6 +19,9 @@ sed -i "s#%%ingress_entry%%#${ingress_entry}#g" /etc/nginx/servers/ingress.conf
 exec nginx &
 WAIT_PIDS+=($!)
 
+bashio::log.info "starting jackett"
+exec /opt/Jackett/jackett --NoUpdates
+
 function stop_addon() {
 	bashio::log.info "Kill Processes..."
 	kill -15 "${WAIT_PIDS[@]}"

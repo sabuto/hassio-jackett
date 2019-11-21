@@ -5,6 +5,9 @@ ARG BUILD_ARCH=amd64
 
 ARG JACKETT_RELEASE=v0.12.999
 
+ENV XDG_DATA_HOME="/config" \
+XDG_CONFIG_HOME="/config"
+
 RUN apk add --no-cache --virtual .build-dependencies \
         icu-libs \
         libssl1.1 \

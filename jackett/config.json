@@ -9,7 +9,7 @@
   "boot": "auto",
   "webui": "http://[HOST]:[PORT:80]",
   "map": [
-    "backup:rw",
+    "config:rw",
     "share:rw",
     "ssl"
   ],
