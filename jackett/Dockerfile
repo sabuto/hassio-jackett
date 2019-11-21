@@ -7,7 +7,7 @@ ARG JACKETT_RELEASE
 
 RUN apk add --no-cache --virtual .build-dependencies \
         icu-libs \
-        libssl1.0 \
+        libssl1.1 \
         wget \
     \
     && apk add --no-cache \
