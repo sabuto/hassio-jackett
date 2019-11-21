@@ -22,7 +22,7 @@
   "options": {},
   "schema": {},
   "ports" : {
-    "9118/tcp": 9118,
+    "9118/tcp": 9118
   },
   "ports_description" : {
     "8989/tcp": "Port for the web interface (not needed with ingress)"
