@@ -26,7 +26,7 @@ RUN apk add --no-cache --virtual .build-dependencies \
     && if [ "${BUILD_ARCH}" = "amd64" ]; then ARCH="AMDx64"; fi \
     && curl -o \
     /tmp/jackett.tar.gz -L \
-    		"https://github.com/Jackett/Jackett/releases/download/${JACKETT_RELEASE}/Jackett.Binaries.Linux${JACKETT_ARCH}.tar.gz"
+    		"https://github.com/Jackett/Jackett/releases/download/${JACKETT_RELEASE}/Jackett.Binaries.Linux${JACKETT_ARCH}.tar.gz" \
     #&& tar xf \
     #/tmp/jackett.tar.gz -C \
     #		/opt/Jackett --strip-components=1 \
