@@ -3,7 +3,7 @@ FROM $BUILD_FROM
 
 ARG BUILD_ARCH=amd64
 
-ARG JACKETT_RELEASE
+ARG JACKETT_RELEASE=v0.12.999
 
 RUN apk add --no-cache --virtual .build-dependencies \
         icu-libs \
