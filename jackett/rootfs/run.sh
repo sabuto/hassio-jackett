@@ -12,12 +12,12 @@ bashio::log.info "starting...."
 ingress_entry=$(bashio::addon.ingress_entry)
 ingress_port=$(bashio::addon.ingress_port)
 ingress_interface=$(bashio::addon.ip_address)
-sed -i "s/%%port%%/${ingress_port}/g" /etc/nginx/servers/ingress.conf
-sed -i "s/%%interface%%/${ingress_interface}/g" /etc/nginx/servers/ingress.conf
-sed -i "s#%%ingress_entry%%#${ingress_entry}#g" /etc/nginx/servers/ingress.conf
+sed -i "s/%%port%%/${ingress_port}/g" /etc/nginx/servers/ingress.conf.disabled
+sed -i "s/%%interface%%/${ingress_interface}/g" /etc/nginx/servers/ingress.conf.disabled
+sed -i "s#%%ingress_entry%%#${ingress_entry}#g" /etc/nginx/servers/ingress.conf.disabled
 
 hassio_dns=$(bashio::dns.host)
-sed -i "s/%%hassio_dns%%/${hassio_dns}/g" /etc/nginx/includes/resolver.conf
+sed -i "s/%%hassio_dns%%/${hassio_dns}/g" /etc/nginx/includes/resolver.conf.disabled
 
 exec nginx &
 WAIT_PIDS+=($!)
