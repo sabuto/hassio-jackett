@@ -5,7 +5,7 @@ declare hassio_dns
 declare ingress_interface
 declare ingress_port
 declare ingress_entry
-decalre black_hole
+declare black_hole
 WAIT_PIDS=()
 
 bashio::log.info "starting...."
