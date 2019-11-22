@@ -38,9 +38,9 @@ if ! bashio::fs.directory_exists "${black_hole}"; then
 	mkdir -p $black_hole || bashio::exit.nok "error in folder creation 3"
 fi
 
-sed -i "s#%%blackhole%%#${black_hole}#g" /config/Jackett/ServerConfig.json || bashio::exit.nok "error in blackhole sed"
-
 mv /Jackett/ServerConfig.json /config/Jackett/ServerConfig.json || bashio::exit.nok "error in config move"
+
+sed -i "s#%%black_hole%%#${black_hole}#g" /config/Jackett/ServerConfig.json || bashio::exit.nok "error in blackhole sed"
 
 sed -i "s#%%basepath%%#${ingress_entry}#g" /config/Jackett/ServerConfig.json || bashio::exit.nok "error in port sed"
 
