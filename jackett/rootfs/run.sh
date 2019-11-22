@@ -5,6 +5,7 @@ declare hassio_dns
 declare ingress_interface
 declare ingress_port
 declare ingress_entry
+decalre black_hole
 WAIT_PIDS=()
 
 bashio::log.info "starting...."
@@ -28,6 +29,14 @@ if ! bashio::fs.directory_exists '/config/jackett'; then
 	mkdir -p /config/Jackett || bashio::exit.nok "error in folder creation"
 	mkdir -p /share/Jackett || bashio::exit.nok "error in folder creation 2"
 fi
+
+black_hole=$(bashio::config 'black_hole')
+
+if ! bashio::fs.directory_exists "${black_hole}"; then
+	mkdir -p $black_hole || bashio::exit.nok "error in folder creation 3"
+fi
+
+sed -i "s#%%blackhole%%#${black_hole}#g" /config/Jackett/ServerConfig.json || bashio::exit.nok "error in blackhole sed"
 
 mv /Jackett/ServerConfig.json /config/Jackett/ServerConfig.json || bashio::exit.nok "error in config move"
 

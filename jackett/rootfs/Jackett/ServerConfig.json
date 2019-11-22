@@ -4,7 +4,7 @@
   "APIKey": "",
   "AdminPassword": null,
   "InstanceId": "",
-  "BlackholeDir": null,
+  "BlackholeDir": "%%blackhole%%",
   "UpdateDisabled": false,
   "UpdatePrerelease": false,
   "BasePathOverride": "%%basepath%%",
