@@ -33,6 +33,12 @@ if ! bashio::fs.file_exists '/config/jackett/ServerConfig.json'; then
 	mv /Jackett/ServerConfig.json /config/jackett/ServerConfig.json
 fi
 
+APIKEY=${APIKEY-$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)}
+INSTANCEID=${INSTANCEID-$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 100 | head -n 1)}
+
+sed -i 's/<apikey>/'${APIKEY}'/;s/<instanceid>/'${INSTANCEID}'/' /config/jackett/ServerConfig.json
+sed -i "s#%%basepath%%#${ingress_entry}#g" /config/jackett/ServerConfig.json
+
 cd /opt/Jackett || bashio::exit.nok "setup gone wrong!"
 
 exec jackett --NoUpdates &
