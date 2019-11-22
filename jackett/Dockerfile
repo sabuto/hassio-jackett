@@ -6,7 +6,7 @@ ARG BUILD_ARCH=amd64
 ARG JACKETT_RELEASE
 
 ENV XDG_DATA_HOME="/share/jackett" \
-XDG_CONFIG_HOME="/config/jackett"
+XDG_CONFIG_HOME="/config"
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
