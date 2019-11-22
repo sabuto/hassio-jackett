@@ -1,9 +1,9 @@
 {
   "Port": 8889,
   "AllowExternal": true,
-  "APIKey": "<apikey>",
+  "APIKey": "",
   "AdminPassword": null,
-  "InstanceId": "<instanceid>",
+  "InstanceId": "",
   "BlackholeDir": null,
   "UpdateDisabled": false,
   "UpdatePrerelease": false,
