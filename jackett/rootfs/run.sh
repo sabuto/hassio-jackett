@@ -32,7 +32,7 @@ fi
 
 black_hole=$(bashio::config 'black_hole')
 
-basio::log.info "Black hole: ${black_hole}"
+bashio::log.info "Black hole: ${black_hole}"
 
 if ! bashio::fs.directory_exists "${black_hole}"; then
 	mkdir -p $black_hole || bashio::exit.nok "error in folder creation 3"
