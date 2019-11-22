@@ -17,14 +17,14 @@
   "hassio_role": "default",
   "auth_api": true,
   "apparmor": false,
-  "ingress": false,
+  "ingress": true,
   "options": {},
   "schema": {},
   "ports" : {
-    "9117/tcp": 9118
+    "9117/tcp": null
   },
   "ports_description" : {
-    "8989/tcp": "Port for the web interface (not needed with ingress)"
+    "9117/tcp": "Port for the web interface (not needed with ingress)"
   },
   "image" : "sabuto/{arch}-hassio-jackett"
 }

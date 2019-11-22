@@ -1,0 +1,19 @@
+{
+  "Port": 8889,
+  "AllowExternal": true,
+  "APIKey": "%%api_key%%",
+  "AdminPassword": null,
+  "InstanceId": "%%instance_id%%",
+  "BlackholeDir": null,
+  "UpdateDisabled": false,
+  "UpdatePrerelease": false,
+  "BasePathOverride": "%%basepath%%",
+  "OmdbApiKey": null,
+  "OmdbApiUrl": null,
+  "ProxyUrl": null,
+  "ProxyType": 0,
+  "ProxyPort": null,
+  "ProxyUsername": null,
+  "ProxyPassword": null,
+  "ProxyIsAnonymous": true
+}
