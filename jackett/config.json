@@ -18,6 +18,7 @@
   "auth_api": true,
   "apparmor": false,
   "ingress": true,
+  "ingress_port": 9220,
   "options": {},
   "schema": {},
   "ports" : {
