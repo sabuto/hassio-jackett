@@ -25,13 +25,13 @@ WAIT_PIDS+=($!)
 bashio::log.info "starting jackett"
 
 if ! bashio::fs.directory_exists '/config/jackett'; then
-	mkdir -p /config/jackett || bashio::exit.nok "error in folder creation"
-	mkdir -p /share/jackett || bashio::exit.nok "error in folder creation 2"
+	mkdir -p /config/Jackett || bashio::exit.nok "error in folder creation"
+	mkdir -p /share/Jackett || bashio::exit.nok "error in folder creation 2"
 fi
 
-mv /Jackett/ServerConfig.json /config/jackett/ServerConfig.json || bashio::exit.nok "error in config move"
+mv /Jackett/ServerConfig.json /config/Jackett/ServerConfig.json || bashio::exit.nok "error in config move"
 
-sed -i "s#%%basepath%%#${ingress_entry}#g" /config/jackett/ServerConfig.json || bashio::exit.nok "error in port sed"
+sed -i "s#%%basepath%%#${ingress_entry}#g" /config/Jackett/ServerConfig.json || bashio::exit.nok "error in port sed"
 
 cd /opt/Jackett || bashio::exit.nok "setup gone wrong!"
 
