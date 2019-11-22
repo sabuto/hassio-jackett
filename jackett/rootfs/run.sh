@@ -25,19 +25,19 @@ WAIT_PIDS+=($!)
 bashio::log.info "starting jackett"
 
 if ! bashio::fs.directory_exists '/config/jackett'; then
-	mkdir -p /config/jackett
-	mkdir -p /share/jackett
+	mkdir -p /config/jackett || bashio::exit.nok "error in folder creation"
+	mkdir -p /share/jackett || bashio::exit.nok "error in folder creation 2"
 fi
 
 if ! bashio::fs.file_exists '/config/jackett/ServerConfig.json'; then
-	mv /Jackett/ServerConfig.json /config/jackett/ServerConfig.json
+	mv /Jackett/ServerConfig.json /config/jackett/ServerConfig.json || bashio::exit.nok "error in config move"
 fi
 
-APIKEY=${APIKEY-$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)}
-INSTANCEID=${INSTANCEID-$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 100 | head -n 1)}
+APIKEY=${APIKEY-$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)} || bashio::exit.nok "error in api key gen"
+INSTANCEID=${INSTANCEID-$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 100 | head -n 1)} || bashio::exit.nok "error in instance key gen"
 
-sed -i 's/<apikey>/'${APIKEY}'/;s/<instanceid>/'${INSTANCEID}'/' /config/jackett/ServerConfig.json
-sed -i "s#%%basepath%%#${ingress_entry}#g" /config/jackett/ServerConfig.json
+sed -i 's/<apikey>/'${APIKEY}'/;s/<instanceid>/'${INSTANCEID}'/' /config/jackett/ServerConfig.json || bashio::exit.nok "error in key sed"
+sed -i "s#%%basepath%%#${ingress_entry}#g" /config/jackett/ServerConfig.json || bashio::exit.nok "error in port sed"
 
 cd /opt/Jackett || bashio::exit.nok "setup gone wrong!"
 
