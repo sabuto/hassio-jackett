@@ -29,9 +29,7 @@ if ! bashio::fs.directory_exists '/config/jackett'; then
 	mkdir -p /share/jackett || bashio::exit.nok "error in folder creation 2"
 fi
 
-if ! bashio::fs.file_exists '/config/jackett/ServerConfig.json'; then
-	mv /Jackett/ServerConfig.json /config/jackett/ServerConfig.json || bashio::exit.nok "error in config move"
-fi
+mv /Jackett/ServerConfig.json /config/jackett/ServerConfig.json || bashio::exit.nok "error in config move"
 
 sed -i "s#%%basepath%%#${ingress_entry}#g" /config/jackett/ServerConfig.json || bashio::exit.nok "error in port sed"
 
