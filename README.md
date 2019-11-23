@@ -5,7 +5,7 @@
 
 ## About
 
-You can use this add-on to install Jackett, which is an open-source. Jackett works as a proxy server: it translates queries from apps (Sonarr, Radarr, SickRage, CouchPotato, Mylar, Lidarr, DuckieTV, qBittorrent, Nefarious etc) into tracker-site-specific http queries. For more information, please see [Jackett].
+You can use this add-on to install Jackett, which is an open-source indexer scraper. Jackett works as a proxy server: it translates queries from apps (Sonarr, Radarr, SickRage, CouchPotato, Mylar, Lidarr, DuckieTV, qBittorrent, Nefarious etc) into tracker-site-specific http queries. For more information, please see [Jackett].
 
 ## Installation
 
@@ -18,7 +18,7 @@ The installation of this add-on is straightforward and easy to do.
 
 ## How to use
 
-The add-on has a doesn't have options available. To get the add-on running:
+To get the add-on running:
 
 1. Start the add-on.
 2. Have some patience and wait a couple of minutes.
