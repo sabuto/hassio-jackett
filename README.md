@@ -13,8 +13,8 @@
 ![Travis Ci][travis-shield]
 [![GitHub Activity][commits-shield]][commits]
 
-
-
+* * *
+![Sonarr Logo](images/sonarr-banner.png)
 
 
 ## About
