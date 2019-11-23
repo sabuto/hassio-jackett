@@ -14,7 +14,7 @@
 [![GitHub Activity][commits-shield]][commits]
 
 * * *
-![Sonarr Logo](images/sonarr-banner.png)
+![Sonarr Logo](images/jackett-banner.png)
 
 
 ## About
