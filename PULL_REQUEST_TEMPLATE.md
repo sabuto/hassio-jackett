@@ -1,5 +1,15 @@
-# Fix or Feature Request?
-<!--- Is this pull request to fix something or is a feature request ---!>
-<!--- If this is a fix has a issue been raised? (anything other than a typo) ---!>
+## Fix or Feature Request?
 
-# What does this solve
+- [ ] FIX
+- [ ] FEATURE
+
+## If this is a fix has a issue been raised? (anything other than a typo)
+
+- [ ] YES `* Please include the issue number or (link)`
+- [ ] NO
+
+## What does this solve
+
+<!---Breifly explain what this is solving ---!>
+
+Thanks for contributing!
