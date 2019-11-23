@@ -83,3 +83,5 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 [releases-shield]: https://img.shields.io/github/v/release/sabuto/hassio-jackett
 [releases]: https://github.com/sabuto/hassio-jackett/releases
 [license-shield]: https://img.shields.io/github/license/sabuto/hassio-jackett
+[commits-shield]: https://img.shields.io/github/commit-activity/y/Sabuto/hassio-jackett.svg
+[commits]: https://github.com/Sabuto/hassio-jackett/commits/
