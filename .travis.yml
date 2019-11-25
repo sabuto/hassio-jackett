@@ -14,7 +14,7 @@ jobs:
   include:
     - stage: Preflight
       script:
-        - $TRAVIS_BUILD_DIR/.travis/check.sh
+        - $TRAVIS_BUILD_DIR/.travis/checks.sh
       env:
         - SCRIPT=check
     - stage: Preflight
