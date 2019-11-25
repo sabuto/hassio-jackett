@@ -1,4 +1,5 @@
 ARG BUILD_FROM
+# hadolint ignore=DL3006
 FROM $BUILD_FROM
 
 ARG BUILD_ARCH=amd64
@@ -12,6 +13,7 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends \
               libicu60 \
               libssl1.0 \
+              # hadolint ignore=DL4001
               wget \
               curl \
               nginx \
