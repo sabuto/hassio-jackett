@@ -4,7 +4,6 @@ services:
   - docker
 
 before_install:
-  - chmod +x $TRAVIS_BUILD_DIR/.travis/checks.sh
   - chmod +x $TRAVIS_BUILD_DIR/.travis/lint.sh
   - chmod +x $TRAVIS_BUILD_DIR/.travis/build.sh
   - chmod +x $TRAVIS_BUILD_DIR/.travis/dist.sh
@@ -12,11 +11,6 @@ before_install:
 
 jobs:
   include:
-    - stage: Preflight
-      script:
-        - $TRAVIS_BUILD_DIR/.travis/checks.sh
-      env:
-        - SCRIPT=check
     - stage: Preflight
       script:
         - $TRAVIS_BUILD_DIR/.travis/lint.sh
