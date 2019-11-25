@@ -3,10 +3,6 @@ language: shell
 services:
   - docker
 
-branches:
-  only:
-  - dev
-
 before_install:
   - chmod +x build.sh
   - chmod +x dist.sh
