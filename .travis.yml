@@ -4,10 +4,10 @@ services:
   - docker
 
 before_install:
-  - chmod +x .travis/check.sh
-  - chmod +x .travis/lint.sh
-  - chmod +x .travis/build.sh
-  - chmod +x .travis/dist.sh
+  - chmod +x $TRAVIS_BUILD_DIR/.travis/check.sh
+  - chmod +x $TRAVIS_BUILD_DIR/.travis/lint.sh
+  - chmod +x $TRAVIS_BUILD_DIR/.travis/build.sh
+  - chmod +x $TRAVIS_BUILD_DIR/.travis/dist.sh
 
 
 jobs:
