@@ -9,4 +9,5 @@ docker run --rm --privileged \
 	homeassistant/amd64-builder \
 	-t jackett \
 	--amd64 \
+	--aarch64 \
 	--test

@@ -11,4 +11,5 @@ docker run --rm --privileged \
 	-v "$(pwd)":/data \
 	homeassistant/amd64-builder \
 	--target jackett \
-	--amd64
+	--amd64 \
+	--aarch64
