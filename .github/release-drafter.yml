@@ -1,3 +1,19 @@
+name-template: '$NEXT_PATCH_VERSION'
+tag-template: '$NEXT_PATCH_VERSION'
+categories:
+  - title: 'Features'
+    labels:
+      - 'feature'
+      - 'enhancement'
+  - title: 'Bug Fixes'
+    labels:
+      - 'fix'
+      - 'bug'
+      - 'bugfix'
+  - title: 'Maintenance'
+    label: 'chore'
+branches: 'chore/update-release-drafter'
+change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 template: |
   ## What’s Changed
 
