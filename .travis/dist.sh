@@ -12,4 +12,5 @@ docker run --rm --privileged \
 	homeassistant/amd64-builder \
 	--target jackett \
 	--amd64 \
-	--aarch64
+	--aarch64 \
+	--armv7
