@@ -28,7 +28,6 @@ RUN apt-get update \
     && if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="ARM64"; fi \
     && if [ "${BUILD_ARCH}" = "amd64" ]; then ARCH="AMDx64"; fi \
     && if [ "${BUILD_ARCH}" = "armv7" ]; then ARCH="ARM32"; fi \
-    && if [ "${BUILD_ARCH}" = "armhf" ]; then ARCH="ARM32"; fi \
     && curl -o \
     /tmp/jackett.tar.gz -L \
     		"https://github.com/Jackett/Jackett/releases/download/${JACKETT_RELEASE}/Jackett.Binaries.Linux${ARCH}.tar.gz" \
