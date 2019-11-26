@@ -11,11 +11,11 @@ before_install:
 
 jobs:
   include:
-    - stage: Preflight
-      script:
-        - $TRAVIS_BUILD_DIR/.travis/lint.sh
-      env:
-        - SCRIPT=hadolint
+    # - stage: Preflight
+    #   script:
+    #     - $TRAVIS_BUILD_DIR/.travis/lint.sh
+    #   env:
+    #     - SCRIPT=hadolint
     - stage: Build Docker Images
       script:
         - $TRAVIS_BUILD_DIR/.travis/build.sh
