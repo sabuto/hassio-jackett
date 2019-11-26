@@ -12,7 +12,6 @@ categories:
       - 'bugfix'
   - title: 'Maintenance'
     label: 'chore'
-branches: 'chore/update-release-drafter'
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 template: |
   ## What’s Changed
