@@ -10,4 +10,5 @@ docker run --rm --privileged \
 	-t jackett \
 	--amd64 \
 	--aarch64 \
+	--armv7 \
 	--test
