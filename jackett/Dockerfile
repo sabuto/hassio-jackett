@@ -1,7 +1,7 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM
 
-ARG BUILD_ARCH=amd64
+ARG BUILD_ARCH
 
 ARG JACKETT_RELEASE
 
@@ -27,6 +27,7 @@ RUN apt-get update \
     && ARCH="${BUILD_ARCH}" \
     && if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="ARM64"; fi \
     && if [ "${BUILD_ARCH}" = "amd64" ]; then ARCH="AMDx64"; fi \
+    && if [ "${BUILD_ARCH}" = "armv7" ]; then ARCH="ARM32"; fi \
     && curl -o \
     /tmp/jackett.tar.gz -L \
     		"https://github.com/Jackett/Jackett/releases/download/${JACKETT_RELEASE}/Jackett.Binaries.Linux${ARCH}.tar.gz" \

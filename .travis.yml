@@ -3,20 +3,23 @@ language: shell
 services:
   - docker
 
-branches:
-  only:
-  - dev
-
 before_install:
-  - chmod +x build.sh
-  - chmod +x dist.sh
+  - chmod +x $TRAVIS_BUILD_DIR/.travis/lint.sh
+  - chmod +x $TRAVIS_BUILD_DIR/.travis/build.sh
+  - chmod +x $TRAVIS_BUILD_DIR/.travis/dist.sh
 
 
 jobs:
   include:
+    # - stage: Preflight
+    #   script:
+    #     - $TRAVIS_BUILD_DIR/.travis/lint.sh
+    #   env:
+    #     - SCRIPT=hadolint
     - stage: Build Docker Images
       script:
-        - $TRAVIS_BUILD_DIR/build.sh
+        - $TRAVIS_BUILD_DIR/.travis/build.sh
     - stage: Deploy Docker Images to Docker Hub
+      if: (type != pull_request AND tag IS present) OR (branch = dev)
       script:
-        - $TRAVIS_BUILD_DIR/dist.sh
+        - $TRAVIS_BUILD_DIR/.travis/dist.sh
