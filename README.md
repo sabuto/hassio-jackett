@@ -61,6 +61,8 @@ The `black_hole` option controls the location of saved torrent files. It can be 
 
 In case you've found a bug, please open an issue on our GitHub [issue].
 
+There has been reports of the **Web UI not loading** on some set-ups. This is caused from the browser blocking an API call to home assistant. If you open the browser console and find the blocked URL and manual amend it to HTTPS the add-on functions as it should. If this doesn't fix it for you, open an [issue]. 
+
 ## License
 
 MIT License
